@@ -1,0 +1,10 @@
+  .input-group{
+      width: 100%;
+  }
+  .input-group-text{
+      width: 15%;
+      text-align: left;
+  }
+  .form-control {
+      width: 85%;
+  }

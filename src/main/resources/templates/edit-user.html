@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link th:href="@{/css/main.css}" rel="stylesheet" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+    <div th:insert="~{fragments/header :: header}"></div>
+    <h1 class="text-center">Edit Account Info</h1>
+    <div class="container">
+	<form id="profile-form" action="#" th:action="@{/user}" th:object="${user}" method="post">
+		<div class="input-group mb-3">
+	  		<span class="input-group-text">Username</span>
+	  		<input type="text" class="form-control" th:field="*{username}" id="username" placeholder="username" disabled="true">
+			<span th:if="${#fields.hasErrors('*{username}')}" th:errors="*{*{username}}"></span>
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text">First Name</span>
+	  		<input type="text" class="form-control" th:field="*{fname}" id="fname" placeholder="fname" disabled="true">
+			<span th:if="${#fields.hasErrors('fname')}" th:errors="*{fname}"></span>
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text">Last Name</span>
+	  		<input type="text" class="form-control" th:field="*{lname}" id="lname" placeholder="lname" disabled="true">
+			<span th:if="${#fields.hasErrors('lname')}" th:errors="*{lname}"></span>
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text">Email</span>
+	  		<input type="text" class="form-control" th:field="*{email}" id="email" placeholder="email" disabled="true">
+			<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text">Password</span>
+	  		<input type="password" class="form-control" th:field="*{password}" id="password" placeholder="password" disabled="true">
+			<span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+		</div>
+		
+		<input type="submit" value="Update Account" disabled="true">   
+	</form>
+	</div>
+	<input id="edit-toggle" onClick="edit_form()" type="button" value="Edit"></input>
+	<script type="text/javascript">
+        function edit_form() {
+        		$("#edit-toggle").hide();
+        		$("#profile-form input").prop("disabled", false);
+        }
+    </script>
+</html>
