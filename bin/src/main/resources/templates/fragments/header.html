@@ -2,7 +2,6 @@
 <html xmlns:th="http://thymeleaf.org">
 <head>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-	<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary" th:fragment="header">
@@ -10,22 +9,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" th:href="@{/}">Home</a>
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" th:href="@{/profile}">Profile</a>
+          <a class="nav-link" href="#">Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" th:href="@{/project}">Project</a>
+          <a class="nav-link" href="#">Projects</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" th:href="@{/user}">Account</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="javascript: document.logoutForm.submit()" role="menuitem"> Logout</a>
-		  <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
-      		<input hidden="true" type="submit" value="Sign Out"/>
-   		  </form> 
+          <a class="nav-link">Account</a>
         </li>
       </ul>
     </div>

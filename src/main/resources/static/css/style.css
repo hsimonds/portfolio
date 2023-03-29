@@ -1,0 +1,109 @@
+.form-container {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media screen and (max-width:1075px) {
+	.form-container {
+		width: 90%;
+
+	}
+}
+
+.project-container {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media screen and (max-width:1075px) {
+	.project-container {
+		width: 90%;
+
+	}
+}
+
+html body {
+	background-color: #4d4d4d;
+	color: #f2f2f2;
+}
+
+.card {
+	background-color: #262626;
+	color: #f2f2f2;
+}
+
+.navbar {
+    background-color: #262626 !important; 
+    font-size:1.0rem;
+}
+
+.nav-link {
+	color: #f2f2f2 !important;
+}
+
+.nav-link:hover {
+		color: #b38f00 !important;
+}
+
+.nav-item:hover {
+		background-color: #4d4d4d;	
+}
+
+
+.card-text {
+	font-size: 1.0rem;
+}
+
+.custom-link {
+	color: #b38f00;
+}
+
+.profile-separator {
+	margin: auto;
+	margin-bottom: 5px;
+	width: 50%;
+}
+
+.separator-container {
+	text-align: center;
+}
+
+.btn-custom {
+		background-color: #f2f2f2;
+}
+
+.btn-custom2 {
+		background-color: #f2f2f2;
+}
+
+.btn-custom:hover {
+	color: #b38f00;
+	background-color: #4d4d4d;
+}
+
+.btn-custom2:hover {
+	color: #b38f00;
+	background-color: #262626;
+}
+
+.custom-shadow {
+  box-shadow: 5px 5px 10px #262626;
+}
+
+.input-group-text {
+	width: 140px;
+}
+.d-flex{
+  gap:5px;
+}
+
+.alert {
+	margin-top:10px;
+}
+
+.form-error-text {
+	color: red;
+}
+

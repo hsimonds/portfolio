@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <div th:insert="~{fragments/header :: header}"></div>
+    <div th:insert="~{fragments/messaging :: messaging}"></div>
+    <div th:unless="${message != null}">
+    	<div class="container">
+    		<h1 class="text-center m-5" th:text="${profile.displayName + '''s Developer Profile'}"></h1>
+	    	<div class="row row-cols-2 g-2">
+	    		<div class="col">
+					<h4 class="text-center">CODING LANGUAGES</h4>
+					<hr class="profile-separator">
+	    			<p class="text-center fs-6 font-italic" th:text="${#strings.listJoin(profile.languages, ', ')}"></p>
+	    		</div>	
+	    		<div class="col">
+	    			<h4 class="text-center">FRAMEWORKS</h4>
+	    			<hr class="profile-separator">
+	    			<p class="font-italic text-center fs-6" th:text="${#strings.listJoin(profile.frameworks, ', ')}"></p>
+	    		</div>	
+	    		<div class="col">
+	    			<h4 class="text-center">GITHUB</h4>
+	    			<hr class="profile-separator">
+	    			<p class="text-center">
+	    				<a class="custom-link fs-6" th:href="|http://${profile.github}|" th:text="${profile.github}"></a>
+	    			</p> 
+	    		</div>	
+	    		<div class="col">
+	    			<h4 class="text-center">LINKEDIN</h4>
+	    			<hr class="profile-separator">
+	    		    <p class="text-center">
+	    				<a class="custom-link fs-6 font-italic" th:href="|http://${profile.linkedin}|" th:text="${profile.linkedin}"></a>
+	    			</p> 
+	    		</div>
+	    		<div class="col">
+	    			<h4 class="text-center">PERSONAL WEBSITE</h4>
+	    			<hr class="profile-separator">
+	    		    <p class="text-center fs-6 font-italic" th:text="${profile.personalWebsite}"></p>
+	    		</div>	
+	    		<div class="col">
+	    			<h4 class="text-center">OTHER WEBSITE</h4>
+	    			<hr class="profile-separator">
+	    		    <p class="text-center fs-6 font-italic" th:text="${profile.otherWebsite}"></p>
+	    		</div>	   		
+	    	</div>
+		</div>
+		<h2 class="text-center m-5">Sample Projects</h2>
+		<div th:insert="~{fragments/projects :: projects}"></div>
+	</div>
+</body>	
+</html>

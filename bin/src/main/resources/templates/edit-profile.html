@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link th:href="@{/css/main.css}" rel="stylesheet" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+    <div th:insert="~{fragments/header :: header}"></div>
+    <h1 class="text-center">Edit Developer Profile</h1>
+    <div class="container">
+	<form id="profile-form" action="#" th:action="@{/profile/{id}(id=${profile.id})}" th:object="${profile}" method="post">
+		<div class="input-group mb-3">
+	  		<span class="input-group-text">Name</span>
+	  		<input type="text" class="form-control" th:field="*{name}" id="name" placeholder="name" disabled="true">
+			<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text">Github</span>
+	  		<input type="text" class="form-control" th:field="*{github}" id="github" placeholder="name" disabled="true">
+			<span th:if="${#fields.hasErrors('github')}" th:errors="*{github}"></span>
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text">Linkedin</span>
+	  		<input type="text" class="form-control" th:field="*{linkedin}" id="linkedin" placeholder="name" disabled="true">
+			<span th:if="${#fields.hasErrors('linkedin')}" th:errors="*{linkedin}"></span>
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text">Youtube</span>
+	  		<input type="text" class="form-control" th:field="*{youtube}" id="youtube" placeholder="name" disabled="true">
+			<span th:if="${#fields.hasErrors('youtube')}" th:errors="*{youtube}"></span>
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text">Personal Website</span>
+	  		<input type="text" class="form-control" th:field="*{personalWebsite}" id="personalWebsite" placeholder="name" disabled="true">
+			<span th:if="${#fields.hasErrors('personalWebsite')}" th:errors="*{personalWebsite}"></span>
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text">Other Website</span>
+	  		<input type="text" class="form-control" th:field="*{otherWebsite}" id="otherWebsite" placeholder="name" disabled="true">
+			<span th:if="${#fields.hasErrors('otherWebsite')}" th:errors="*{otherWebsite}"></span>
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text">Languages</span>
+	  		<input type="text" class="form-control" th:field="*{{languages}}" id="languages" placeholder="name" disabled="true">
+			<span th:if="${#fields.hasErrors('languages')}" th:errors="*{{languages}}"></span>
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text">Frameworks</span>
+	  		<input type="text" class="form-control" th:field="*{{frameworks}}" id="frameworks" placeholder="name" disabled="true">
+			<span th:if="${#fields.hasErrors('frameworks')}" th:errors="*{{frameworks}}"></span>
+		</div>
+		<input type="submit" value="Update Profile" disabled="true">   
+	</form>
+	</div>
+	<input id="edit-toggle" onClick="edit_form()" type="button" value="Edit"></input>
+	<script type="text/javascript">
+        function edit_form() {
+        		$("#edit-toggle").hide();
+        		$("#profile-form input").prop("disabled", false);
+        }
+    </script>
+	
+</html>

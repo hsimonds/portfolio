@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+    <div th:insert="~{fragments/header :: header}"></div>
+    <div th:insert="~{fragments/messaging :: messaging}"></div>
+    <div class="form-container">
+        	<div class="card mx-auto mt-5 w-100 p-4 custom-shadow">
+	        <h2 class="card-title text-center">Create new Project</h2>
+		    <div class="card-body">
+	<form id="profile-form" action="#" th:action="@{/project}" th:object="${project}" method="post">
+		<input type="hidden" th:field="*{profile}"/>
+		<span class="form-error-text" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>		
+		<div class="input-group mb-3">
+	  		<span class="input-group-text">Name</span>
+	  		<input type="text" class="form-control" th:field="*{name}" id="name" placeholder="name">
+		</div>
+		<span class="form-error-text" th:if="${#fields.hasErrors('github')}" th:errors="*{github}"></span>		
+		<div class="input-group mb-3">
+			<span class="input-group-text">Github</span>
+	  		<input type="text" class="form-control" th:field="*{github}" id="github" placeholder="name">
+		</div>
+		<span class="form-error-text" th:if="${#fields.hasErrors('website')}" th:errors="*{website}"></span>		
+		<div class="input-group mb-3">
+			<span class="input-group-text">Website</span>
+	  		<input type="text" class="form-control" th:field="*{website}" id="website" placeholder="website">
+		</div>
+		<span class="form-error-text" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>		
+		<div class="input-group mb-3">
+			<span class="input-group-text">Description</span>
+	  		<input type="text" class="form-control" th:field="*{description}" id="description" placeholder="description">
+		</div>
+		<span class="form-error-text" th:if="${#fields.hasErrors('challenges')}" th:errors="*{{challenges}}"></span>		
+		<div class="input-group mb-3">
+			<span class="input-group-text">Challenges</span>
+	  		<input type="text" class="form-control" th:field="*{{challenges}}" id="challenges" placeholder="challenges">
+		</div>
+		<span class="form-error-text" th:if="${#fields.hasErrors('frontEndTechStack')}" th:errors="*{frontEndTechStack}"></span>		
+		<div class="input-group mb-3">
+			<span class="input-group-text">BE Tech Stack</span>
+	  		<input type="text" class="form-control" th:field="*{frontEndTechStack}" id="frontEndTechStack" placeholder="frontEndTechStack">
+		</div>
+		<span class="form-error-text" th:if="${#fields.hasErrors('backEndTechStack')}" th:errors="*{backEndTechStack}"></span>		
+		<div class="input-group mb-3">
+			<span class="input-group-text">FE Tech Stack</span>
+	  		<input type="text" class="form-control" th:field="*{backEndTechStack}" id="backEndTechStack" placeholder="backEndTechStack">
+		</div>
+		<input type="submit" value="Create Project">   
+	</form>
+	</div>
+	</div>
+	</div>
+</html>
