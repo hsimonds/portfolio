@@ -39,12 +39,16 @@
 	    		<div class="col">
 	    			<h4 class="text-center">PERSONAL WEBSITE</h4>
 	    			<hr class="profile-separator">
-	    		    <p class="text-center fs-6 font-italic" th:text="${profile.personalWebsite}"></p>
+	    			<p class="text-center">
+	    				<a class="custom-link fs-6 font-italic" th:href="|http://${profile.personalWebsite}|" th:text="${profile.personalWebsite}"></a>
+	    			</p> 
 	    		</div>	
 	    		<div class="col">
 	    			<h4 class="text-center">OTHER WEBSITE</h4>
 	    			<hr class="profile-separator">
-	    		    <p class="text-center fs-6 font-italic" th:text="${profile.otherWebsite}"></p>
+	    			<p class="text-center">
+	    				<a class="custom-link fs-6 font-italic" th:href="|http://${profile.otherWebsite}|" th:text="${profile.otherWebsite}"></a>
+	    			</p> 
 	    		</div>	   		
 	    	</div>
 		</div>
