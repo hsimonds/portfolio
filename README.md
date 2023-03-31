@@ -20,4 +20,6 @@ PortfolioApplication.java has code in place to generate sample test accounts and
 
 ## Sample Images
 ![Index](https://user-images.githubusercontent.com/8316955/228609163-a47e498f-33ea-4896-b2a2-d00b2e9ffa3e.JPG)
-![SampleProfile](https://user-images.githubusercontent.com/8316955/228609165-95d2e81c-e7ca-435c-9221-6b464ed2671a.JPG)
+![EditProfile](https://user-images.githubusercontent.com/8316955/229135633-e395148a-c764-4b1f-bbba-a1765bde0243.JPG)
+![SampleProfileUpdated](https://user-images.githubusercontent.com/8316955/229135635-ef4c352b-20a9-4b5d-8564-d9a88096624f.JPG)
+![CreateNewProject](https://user-images.githubusercontent.com/8316955/229135636-e20b0b19-c704-4129-a299-c1d07a14da1b.JPG)
