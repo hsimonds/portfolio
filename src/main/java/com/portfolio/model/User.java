@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import jakarta.validation.constraints.NotEmpty;
 
 @Entity
@@ -17,6 +18,7 @@ import jakarta.validation.constraints.NotEmpty;
 public class User {
 	
 	//Generate a random ID to use as a displayName for the users profile until they update it
+	@Transient
 	private String random = UUID.randomUUID().toString();
 			
 	@Id
