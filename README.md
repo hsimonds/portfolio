@@ -8,15 +8,15 @@ create a public developer profile with their relevant skills and add details, an
 - Maven 3
 
 ## Running the application locally
+**Update application.properties with your postgresql database credentials.**
 
+Remove test data generation code in PortfolioApplication.java if you don't need test data.
 ```shell
 mvn spring-boot:run
 ```
 
 ## Notes
-Current version has properties enabled for debugging. Make sure to review and update application.properties as needed.
-
-PortfolioApplication.java has code in place to generate sample test accounts and profiles along with their relevant details. Update/delete this code as needed.
+Homepage has a link to a sample portfolio with display name "John". Updated/remove this link if this portfolio doesn't exist.
 
 ## Sample Images
 ![Index](https://user-images.githubusercontent.com/8316955/228609163-a47e498f-33ea-4896-b2a2-d00b2e9ffa3e.JPG)
