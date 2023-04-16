@@ -22,7 +22,6 @@ public class WebSecurityConfig {
 		return http
 				.csrf().disable()
 				.authorizeHttpRequests(auth -> auth
-						.requestMatchers(PathRequest.toH2Console()).permitAll()
 						.requestMatchers("/register").permitAll()
 						.requestMatchers("/").permitAll()
 						.requestMatchers("/profile/**").permitAll()

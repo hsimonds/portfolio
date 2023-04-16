@@ -14,7 +14,7 @@ import jakarta.persistence.Transient;
 import jakarta.validation.constraints.NotEmpty;
 
 @Entity
-@Table (name="users")
+@Table (name="portfolio_users")
 public class User {
 	
 	//Generate a random ID to use as a displayName for the users profile until they update it

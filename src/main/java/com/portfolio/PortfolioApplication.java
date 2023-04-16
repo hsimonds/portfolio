@@ -23,8 +23,8 @@ public class PortfolioApplication {
 	@Bean
 	public CommandLineRunner loadUsers(UserRepository userRepository, ProfileRepository profileRepository, PasswordEncoder encoder) {		
 		//Create a couple test users
-		User user1 = new User("hasimonds", "heath", "simonds", "hsimondstest@test.com", encoder.encode("123"), "USER");
-		User user2 = new User("jdoe", "jane", "doe", "jane.doe@example.com", encoder.encode("123"), "USER");
+		User user1 = new User("johndoe", "john", "doe", "johndoe@test.com", encoder.encode("123"), "USER");
+		User user2 = new User("janedoe", "jane", "doe", "janedoe@example.com", encoder.encode("123"), "USER");
 		
 		//Create test language sets
 		Set<String> langSet = new HashSet<String>();
@@ -52,7 +52,7 @@ public class PortfolioApplication {
 		frameSet2.add("Unreal");
 		
 		//Set some user test profiles
-		Profile newProfile1 = new Profile("Heath", "https://github.com", "https://www.linkedin.com", "https://heathspersonalwebsite.com", "https://heathsstackoverflow.com/");
+		Profile newProfile1 = new Profile("John", "https://github.com", "https://www.linkedin.com", "https://johnspersonalwebsite.com", "https://johnsstackoverflow.com/");
 		user1.setProfile(newProfile1);
 		newProfile1.setLanguages(langSet);
 		newProfile1.setFrameworks(frameSet);

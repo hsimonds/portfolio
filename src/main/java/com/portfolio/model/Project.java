@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
+@Table (name="portfolio_projects")
 public class Project {
 	
 	@Id
@@ -19,11 +20,9 @@ public class Project {
 	@Column(name = "project_website")
 	private String website;
 	
-	@Lob
-	@Column(name = "project_description", columnDefinition = "text")
+	@Column(name = "project_description", columnDefinition = "text")	
 	private String description;
 	
-	@Lob
 	@Column(name = "project_challenges", columnDefinition = "text")
 	private String challenges;
 	
